@@ -1,18 +1,74 @@
-body{
-  box-sizing: border-box;
-  margin: 0 auto;
+@font-face {
+  font-family: 'LatoBlack';
+  src: url('./assets/fonts/Lato-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url('./assets/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoLight';
+  src: url('./assets/fonts/Lato-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoThin';
+  src: url('./assets/fonts/Lato-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.header{
-  background-color: #2d303a;
-  border-bottom: solid 6px #323746;
+html{
+  font-size: 10px;
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Lato Regular', sans-serif;
+  font-size: 1.6rem;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 .container{
   width: 100%;
   max-width: 1020px;
   margin: 0 auto;
+
 }
+
+.header{
+  padding: 25px 0 25px;
+  background-color: #2d303a;
+  border-bottom: solid 6px #323746;
+  font-family: LatoBold, sans-serif;
+
+}
+
 
 .header__inner{
   display: flex;
@@ -20,8 +76,13 @@ body{
   align-items: baseline;
 }
 
-.header__logo{
-
+.header__logo h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.55px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .logo-link{
@@ -39,6 +100,8 @@ body{
 .nav__list{
   display: flex;
   color: #fff;
+  font-size: 1.2rem;
+
 }
 
 .nav__list:hover{
@@ -53,4 +116,48 @@ body{
 .nav__list__item:hover{
   cursor: pointer;
     color:#f06c64;
+}
+
+.slider {
+  height: 600px;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+
+}
+
+.container {
+
+}
+
+.slider__inner {
+  position: relative;
+
+}
+
+.slider__img {
+  display: flex;
+
+
+}
+
+
+.iphone_vertical {
+  padding-bottom: 0;
+  padding-left: 100px;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.iphone_horizontal {
+  padding: 174px 0 0 73px;
+
+}
+
+.arrow_left {
+  position: absolute;
+
+}
+
+.arrow_right {
+  position: absolute;
 }
