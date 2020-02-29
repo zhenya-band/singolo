@@ -263,16 +263,17 @@ ul {
   border-bottom: 6px solid #323746;
 }
 .portfolio__title {
-  font-family: "Lato Black", sans-serif;
+  font-family: "LatoBlack", sans-serif;
   font-size: 3rem;
   margin-bottom: 25px;
   color: #666d89;
 }
 .portfolio__subtitle{
-  font-family: 'Lato Regular', sans-serif;
+  font-family: 'LatoLight', sans-serif;
   font-size: 1.8rem;
   color: #666d89;
   text-align: justify;
+
 }
 .portfolio__list{
   display: flex;
@@ -312,4 +313,51 @@ ul {
 }
 .portfolio__images-item{
   margin-bottom: 20px;
+}
+.about__us{
+  height: 734px;
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
+}
+.about__us-title{
+  font-family: 'LatoBlack', sans-serif;
+  font-size: 3rem;
+  color: #666d89;
+  line-height: 18px;
+  padding-top: 66px;
+  margin-bottom: 33px;
+}
+.about__us-subtitle{
+  font-family: 'LatoLight', sans-serif;
+  font-size: 1.8rem;
+  color: #666d89;
+  margin-bottom: 40px;
+  line-height: 30px;
+}
+.about__us-cards{
+  display: flex;
+}
+.card-item{
+  width: 33.33%;
+  margin-right: 15px;
+}
+.peson-photo{
+  margin-bottom: 10px;
+}
+.person-name{
+  font-family: "LatoBlack", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #666d89;
+}
+.person-description{
+  font-family: "LatoRegular", sans-serif;
+  font-size: 1.2rem;
+  line-height: 22px;
+  color: #666d89;
+}
+
+.media {
+  margin-top: 30px;
+
 }
