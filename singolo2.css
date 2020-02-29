@@ -304,3 +304,12 @@ ul {
   color: #fff;
   border-color: #fff;
 }
+.portfolio__images{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+.portfolio__images-item{
+  margin-bottom: 20px;
+}
