@@ -75,7 +75,7 @@ ul {
 }
 
 .quote{
-  height: 654px;
+  height: 653px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
 }
@@ -91,9 +91,13 @@ ul {
   font-family: LatoLight, sans-serif;
   font-size: 1.8rem;
   color: #f0d8d9;
-  margin-top: 30px;
-
+  margin-top: 18px;
+  line-height: 3rem;
+  text-align: justify;
 }
+/*.contact-item{
+  margin-top: -12px;
+}*/
 .contact__content{
   display: flex;
   justify-content: space-between;
@@ -101,7 +105,7 @@ ul {
 }
 
 .contact__form{
- max-width: 650px;
+ max-width: 620px;
 }
 .contacts__input{
   width: 100%;
@@ -111,6 +115,14 @@ ul {
   background-color: #d6564f;
   margin-bottom: 16px;
 }
+.contacts__input::placeholder, .contacts__text::placeholder {
+  font-family: LatoRegular, sans-serif;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  font-weight: 400;
+  color: #f48c8f;
+}
+
 .contacts__text{
   width: 100%;
   border: none;
@@ -119,19 +131,59 @@ ul {
   background-color: #d6564f;
 
 }
+.submit__button{
+  font-family: LatoRegular, sans-serif;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #f0d8d9;
+  background-color: #d6564f
+}
 .contact-description{
   max-width: 301px;
   color: #f0d8d9;
   margin-left: 20px;
+  margin-top: -5px;
 
 }
 .contact-description__title{
   font-family: LatoBlack, sans-serif;
-  font-size: 3rem;
+  font-size: 1.8rem;
   color: #f0d8d9;
+  margin-bottom: 9px;
 }
 .contact-description__subtitle{
   font-family: LatoRegular, sans-serif;
   font-size: 1.2rem;
   color: #f0d8d9;
+  margin-bottom: 30px;
+  line-height: 2.2rem;
+  letter-spacing: -0.02rem;
+  text-align: justify;
+}
+
+.contact-link{
+  text-decoration: none;
+  font-family: LatoRegular, sans-serif;
+  font-size: 1.2rem;
+  color: #f0d8d9;
+}
+
+.footer {
+  background-color: #2d303a;
+  height: 76px;
+}
+.footer__wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.footer__copyright{
+  font-family: LatoRegular, sans-serif;
+  font-size: 1.2rem;
+  color: #666d89;
 }
