@@ -10,18 +10,18 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="home">
     <div class="container">
       <div class="header__inner">
         <h1 class="header__logo">Singolo<span>*</span></h1>
 
         <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__list__item">Home</li>
-            <li class="nav__list__item">Services</li>
-            <li class="nav__list__item">Portfolio</li>
-            <li class="nav__list__item">About</li>
-            <li class="nav__list__item">Contact</li>
+          <ul class="nav__list" id="menu">
+            <li class="nav__list__item active"><a href="#home" class="nav__link active">Home</a></li>
+            <li class="nav__list__item"><a href="#services" class="nav__link">Services</a></li>
+            <li class="nav__list__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+            <li class="nav__list__item"><a href="#about" class="nav__link">About</a></li>
+            <li class="nav__list__item"><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div class="services">
+  <div class="services" id="services">
     <div class="container">
       <h2>Our Services</h2>
       <p class="services-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
@@ -114,7 +114,7 @@
       </div>
     </div>
   </div>
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <div class="container">
       <h2 class="portfolio__title">Portfolio</h2>
       <p class="portfolio__subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -143,7 +143,7 @@
       </div>
     </div>
   </section>
-  <section class="about__us">
+  <section class="about__us" id="about">
     <div class="container">
       <h2 class="about__us-title">About Us</h2>
       <p class="about__us-subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
@@ -197,7 +197,7 @@
       </div>
     </div>
   </section>
-  <section class="quote">
+  <section class="quote" id='contact'>
     <div class="container">
       <h2 class="quete__title">Get a Quote</h2>
       <p class="quete__subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
@@ -251,7 +251,7 @@
       </div>
     </div>
   </footer>
-
+  <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

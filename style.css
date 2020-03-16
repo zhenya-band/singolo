@@ -116,10 +116,14 @@ ul {
 
 .nav__list:hover {}
 
-.nav__list__item {
+.nav__list__item{
   margin-right: 30px;
   text-transform: uppercase;
   position: relative;
+  transition: 0.2s linear;
+}
+.nav__list__item.active{
+  color: #f06c64;
 }
 
 .nav__list__item:after {
@@ -134,7 +138,7 @@ ul {
   transform: translateY(-50%);
 }
 
-.nav__list__item:hover {
+.nav__list__item:not(.active):hover {
   cursor: pointer;
   color: #f06c64;
 }
@@ -145,6 +149,19 @@ ul {
 
 .nav__list__item:last-child:after {
   width: 0;
+}
+.nav__link{
+  color: #fff;
+  text-decoration: none;
+}
+.nav__link.active{
+  color: #f06c64;
+  text-decoration: none;
+}
+
+.nav__link:not(.active):hover {
+  cursor: pointer;
+  color: #f06c64;
 }
 
 /*-------/header------- */
