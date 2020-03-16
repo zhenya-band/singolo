@@ -344,12 +344,17 @@ ul {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  overflow: hidden
+  overflow: hidden;
+  height: 621px;
 }
 
 .portfolio__images-item {
   margin-bottom: 17px;
 }
+.portfolio__images-item-active{
+  border: #F06C64 5px solid;
+}
+
 
 /*-------/portfolio------- */
 /*-------about__us------ */
