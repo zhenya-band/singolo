@@ -340,6 +340,12 @@ ul {
   border-color: #fff;
 }
 
+.portfolio__list_item.active{
+  cursor: pointer;
+  color: #fff;
+  border-color: #fff;
+}
+
 .portfolio__images {
   display: flex;
   justify-content: space-between;
