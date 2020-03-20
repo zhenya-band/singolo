@@ -8,10 +8,13 @@ const form = document.querySelector('.contact__form');
 const submitButton = document.querySelector('.submit__button');
 const blockMessage = document.querySelector('.block__message');
 const closeBlock = document.querySelector('.close-block');
-console.log(menu);
-console.log(portfolioNav);
-console.log(portfolioImages);
-
+const control = document.querySelectorAll('.control');
+const slider = document.querySelector('.slider');
+const turnoffPhone1 = document.querySelector('.turnoff__phone1');
+const turnoffPhone2 = document.querySelector('.turnoff__phone2');
+const lockedPhone1 = document.querySelector('.locked__phone1');
+const lockedPhone2 = document.querySelector('.locked__phone2');
+const phonesAnimation = document.querySelectorAll('.phones__animation');
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -21,33 +24,33 @@ const removeMenuItem = () => {
 }
 
 //-----------menu--------//
+
 window.addEventListener('scroll', () => {
- if (window.pageYOffset > 70) {
-   header.classList.add('header-fixed');
-   if (window.pageYOffset > 70 && window.pageYOffset < 400) {
-     removeMenuItem();
-     document.querySelector('#menu-home').classList.add('active');
-   }
-   if (window.pageYOffset > 70 && window.pageYOffset > 400) {
-     removeMenuItem();
-     document.querySelector('#menu-services').classList.add('active');
-   }
-   if (window.pageYOffset > 70 && window.pageYOffset > 900) {
-     removeMenuItem();
-     document.querySelector('#menu-portfolio').classList.add('active');
-   }
-   if (window.pageYOffset > 70 && window.pageYOffset > 1800) {
-     removeMenuItem();
-     document.querySelector('#menu-about').classList.add('active');
-   }
-   if (window.pageYOffset > 70 && window.pageYOffset > 2400) {
-     removeMenuItem();
-     document.querySelector('#menu-contact').classList.add('active');
-   }
- }
- else {
-   header.classList.remove('header-fixed');
- }
+  if (window.pageYOffset > 70) {
+    header.classList.add('header-fixed');
+    if (window.pageYOffset > 70 && window.pageYOffset < 400) {
+      removeMenuItem();
+      document.querySelector('#menu-home').classList.add('active');
+    }
+    if (window.pageYOffset > 70 && window.pageYOffset > 400) {
+      removeMenuItem();
+      document.querySelector('#menu-services').classList.add('active');
+    }
+    if (window.pageYOffset > 70 && window.pageYOffset > 900) {
+      removeMenuItem();
+      document.querySelector('#menu-portfolio').classList.add('active');
+    }
+    if (window.pageYOffset > 70 && window.pageYOffset > 1800) {
+      removeMenuItem();
+      document.querySelector('#menu-about').classList.add('active');
+    }
+    if (window.pageYOffset > 70 && window.pageYOffset > 2400) {
+      removeMenuItem();
+      document.querySelector('#menu-contact').classList.add('active');
+    }
+  } else {
+    header.classList.remove('header-fixed');
+  }
 });
 
 
@@ -58,32 +61,31 @@ menu.addEventListener('click', (event) => {
 
 ////-------smooth scrolling---//////
 for (let anchor of ANCHORS) {
-    anchor.addEventListener('click', (event) => {
-        event.preventDefault();
-        const blockID = anchor.getAttribute('href');
-        document.querySelector('' + blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        })
+  anchor.addEventListener('click', (event) => {
+    event.preventDefault();
+    const blockID = anchor.getAttribute('href');
+    document.querySelector('' + blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
     })
+  })
 }
 
 //-----------interaction with pictures-----//
 portfolioImages.addEventListener('click', (event) => {
   if (event.target.classList.value === 'portfolio__images-item-active' || event.target.classList.value === 'portfolio__images') {
-      event.target.classList.remove('portfolio__images-item-active');
+    event.target.classList.remove('portfolio__images-item-active');
+  } else {
+    portfolioImages.querySelectorAll('div > img').forEach(element => {
+      element.classList.remove('portfolio__images-item-active');
+    });
+    event.target.classList.add('portfolio__images-item-active');
   }
-  else {
-  portfolioImages.querySelectorAll('div > img').forEach(element => {
-    element.classList.remove('portfolio__images-item-active');
-  });
-  event.target.classList.add('portfolio__images-item-active');
-}
 });
 
 ///------------------ tab switching  -------------///
 portfolioNav.addEventListener('click', (event) => {
-  if(event.target.classList.value.includes('active') === true) return;
+  if (event.target.classList.value.includes('active') === true) return;
 
   portfolioNav.querySelectorAll('li').forEach(el => el.classList.remove('active'));
   event.target.classList.add('active');
@@ -107,7 +109,7 @@ portfolioNav.addEventListener('click', (event) => {
   newarr[randomValue] = newarr[randomValue2];
   newarr[randomValue2] = temp;
 
-  arr.forEach((item, index) =>{
+  arr.forEach((item, index) => {
     item.src = newarr[index];
   })
 });
@@ -117,8 +119,19 @@ portfolioNav.addEventListener('click', (event) => {
 let items = document.querySelectorAll('.item-phone');
 let currentItem = 0;
 let isEnabled = true;
-const slider = document.querySelector('.slider');
-function changeCurrentItem(n){
+
+const changeBackground = () => {
+  if (slider.classList.value.includes('slider1')) {
+    slider.classList.remove('slider1');
+    slider.classList.add('slider2');
+  } else {
+    slider.classList.remove('slider2');
+    slider.classList.add('slider1');
+  }
+}
+
+
+function changeCurrentItem(n) {
   currentItem = (n + items.length) % items.length;
 }
 
@@ -139,13 +152,13 @@ function showItem(direction) {
   });
 }
 
-function previousItem(n){
+function previousItem(n) {
   hideItem('to-right');
   changeCurrentItem(n - 1);
   showItem('from-left');
 }
 
-function nextItem(n){
+function nextItem(n) {
   hideItem('to-left');
   changeCurrentItem(n + 1);
   showItem('from-right');
@@ -163,15 +176,51 @@ document.querySelector('.next').addEventListener('click', function() {
   }
 });
 
+control.forEach((item) => {
+  item.addEventListener('click', () => {
+    changeBackground();
+    if (slider.classList.value.includes('slider2')) {
+      phonesAnimation.forEach((items) =>{
+        items.classList.add('disable');
+      })
+    }
+    else {
+      phonesAnimation.forEach((items) =>{
+        items.classList.remove('disable');
+      })
+    }
+
+  })
+});
+
+///-----turn off phones------///
+turnoffPhone1.addEventListener('click', () => {
+  if (lockedPhone1.classList.value.includes('off')) {
+    lockedPhone1.classList.remove('off');
+  }
+  else lockedPhone1.classList.add('off');
+});
+
+turnoffPhone2.addEventListener('click', () => {
+  if (lockedPhone2.classList.value.includes('off')) {
+    lockedPhone2.classList.remove('off');
+  }
+  else lockedPhone2.classList.add('off');
+})
+
+
+
+
+
 //-----------submit---------///
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const subject = document.querySelector('#subject').value.toString();
   const details = document.querySelector('#details').value.toString();
-   blockMessage.style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
-   document.querySelector('#result-subject').textContent = (subject === '') ? ('Без темы') : ('Тема: ' + subject);
-   document.querySelector('#result-details').textContent = (details === '') ? ('Без описания') : ('Описание: ' + details);
-   blockMessage.classList.remove('hidden');
+  blockMessage.style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
+  document.querySelector('#result-subject').textContent = (subject === '') ? ('Без темы') : ('Тема: ' + subject);
+  document.querySelector('#result-details').textContent = (details === '') ? ('Без описания') : ('Описание: ' + details);
+  blockMessage.classList.remove('hidden');
 });
 
 closeBlock.addEventListener('click', (event) => {
