@@ -4,6 +4,10 @@ const portfolioNav = document.getElementById('portfolioNav');
 const ANCHORS = document.querySelectorAll('a[href*="#"]')
 const header = document.querySelector('.header');
 const home = document.querySelector('#menu-home');
+const form = document.querySelector('.contact__form');
+const submitButton = document.querySelector('.submit__button');
+const blockMessage = document.querySelector('.block__message');
+const closeBlock = document.querySelector('.close-block');
 console.log(menu);
 console.log(portfolioNav);
 console.log(portfolioImages);
@@ -106,4 +110,71 @@ portfolioNav.addEventListener('click', (event) => {
   arr.forEach((item, index) =>{
     item.src = newarr[index];
   })
+});
+
+
+//-----------slider---------///
+let items = document.querySelectorAll('.item-phone');
+let currentItem = 0;
+let isEnabled = true;
+const slider = document.querySelector('.slider');
+function changeCurrentItem(n){
+  currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function() {
+    this.classList.remove('active', direction);
+  });
+}
+
+function showItem(direction) {
+  items[currentItem].classList.add('next-item', direction);
+  items[currentItem].addEventListener('animationend', function() {
+    this.classList.remove('next-item', direction);
+    this.classList.add('active');
+    isEnabled = true;
+  });
+}
+
+function previousItem(n){
+  hideItem('to-right');
+  changeCurrentItem(n - 1);
+  showItem('from-left');
+}
+
+function nextItem(n){
+  hideItem('to-left');
+  changeCurrentItem(n + 1);
+  showItem('from-right');
+}
+
+document.querySelector('.prev').addEventListener('click', function() {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
+});
+
+//-----------submit---------///
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const subject = document.querySelector('#subject').value.toString();
+  const details = document.querySelector('#details').value.toString();
+   blockMessage.style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
+   document.querySelector('#result-subject').textContent = (subject === '') ? ('Без темы') : ('Тема: ' + subject);
+   document.querySelector('#result-details').textContent = (details === '') ? ('Без описания') : ('Описание: ' + details);
+   blockMessage.classList.remove('hidden');
+});
+
+closeBlock.addEventListener('click', (event) => {
+  blockMessage.classList.add('hidden');
+  form.reset();
 });

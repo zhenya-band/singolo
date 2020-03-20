@@ -32,29 +32,48 @@
   <div class="slider" id="home">
     <div class="container">
       <div class="slider__inner">
-        <div class="slider__phones">
-          <div class="iphone_ver">
+
+
+      <div class="item-container">
+
+        <div class="item-phone active">
+          <div class="slider__phones">
+            <div class="iphone_ver">
             <img src="assets/iPhone_Vertical.png" alt="iphone_vertical">
-          </div>
-          <div class="iphone_hor">
+            </div>
+            <div class="iphone_hor">
             <img src="assets/iPhone_Horizontal.png" alt="iphone_horizontal">
+            </div>
           </div>
-
         </div>
-        <!--<div class="slide2">
+
+
+        <div class="item-phone">
+          <div class="slider__phones">
           <img src="assets/slide2.png" alt="slide2">
-        </div>-->
-        <div class="prev">
-          <div class="arrow-left">
-            <img src="assets/arrow_left.png" alt="arrow-left">
+        </div>
+        </div>
+
+      </div>
+
+        <div class="control">
+          <div class="prev">
+            <div class="arrow-left">
+              <img src="assets/arrow_left.png" alt="arrow-left">
+            </div>
           </div>
         </div>
 
+      <div class="control">
         <div class="next">
           <div class="arrow-right">
             <img src="assets/arrow_right.png" alt="arrow-r">
           </div>
         </div>
+      </div>
+
+
+
 
       </div>
     </div>
@@ -215,6 +234,16 @@
           <textarea class="contacts__text" name="details" id="details" rows="12" placeholder="Describe your project in detail..."></textarea>
           <button class="submit__button" type="submit">Submit</button>
         </form>
+        <div class="block__message hidden">
+          <div class="message-text">
+          <p><strong>Письмо отправлено</strong></p>
+          <p><span id="result-subject"></span></p>
+          <p><span id="result-details"></span></p>
+          <button type="button" name="button" class="close-block">
+            ОК
+          </button>
+          </div>
+        </div>
 
         <div class="contact-description">
           <h3 class="contact-description__title">Contact Information</h3>
