@@ -15,6 +15,7 @@ const turnoffPhone2 = document.querySelector('.turnoff__phone2');
 const lockedPhone1 = document.querySelector('.locked__phone1');
 const lockedPhone2 = document.querySelector('.locked__phone2');
 const phonesAnimation = document.querySelectorAll('.phones__animation');
+const mobileMenu = document.querySelector('.mobile__menu');
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -24,6 +25,17 @@ const removeMenuItem = () => {
 }
 
 //-----------menu--------//
+mobileMenu.addEventListener('click', (event) => {
+  if(event.target.classList.value.includes('active')){
+    mobileMenu.classList.remove('active');
+  }
+  else {
+    mobileMenu.classList.add('active');
+  }
+
+})
+
+
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 70) {
@@ -52,7 +64,6 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header-fixed');
   }
 });
-
 
 menu.addEventListener('click', (event) => {
   menu.querySelectorAll('a').forEach(el => el.classList.remove('active'));
@@ -113,7 +124,6 @@ portfolioNav.addEventListener('click', (event) => {
     item.src = newarr[index];
   })
 });
-
 
 //-----------slider---------///
 let items = document.querySelectorAll('.item-phone');
@@ -207,10 +217,6 @@ turnoffPhone2.addEventListener('click', () => {
   }
   else lockedPhone2.classList.add('off');
 })
-
-
-
-
 
 //-----------submit---------///
 form.addEventListener('submit', (event) => {
